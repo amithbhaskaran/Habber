@@ -8,147 +8,888 @@
    v2.0 | 20110126
    License: none (public domain)
    ========================================================================== */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
-blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
-ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
-dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
-tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
-figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	padding: 0;
+	border: 0;
+	margin: 0;
+	vertical-align: baseline;
+	font: inherit;
+	font-size: 100%;
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
 }
 
 /* Force scrollbar */
-html { overflow-y: scroll; }
+html {
+	overflow-y: scroll;
+	font-size: 62.5%;
+}
 
 /* Align radios and text inputs with their label */
 
-input[type='radio'] { vertical-align: text-bottom; }
+input[type="radio"] {
+	vertical-align: text-bottom;
+}
 
 /* Hand cursor on clickable input elements */
 label,
-input[type='button'],
-input[type='submit'],
+input[type="button"],
+input[type="submit"],
 button {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 strong {
-  font-weight: bold;
-  font-family: inherit;
-  font-size: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: bold;
 }
 
-em { font-style: italic; }
+em {
+	font-style: italic;
+}
 
 img {
-  width: 100%;
-  border: 0;
-  vertical-align: middle;
+	width: 100%;
+	border: 0;
+	vertical-align: middle;
 }
 
 sub,
 sup {
-  vertical-align: baseline;
-  position: relative;
-  font-size: 55%;
-  line-height: 0;
+	vertical-align: baseline;
+	position: relative;
+	font-size: 55%;
+	line-height: 0;
 }
 
-sup { top: -.7em; }
-sub { bottom: -.25em; }
+sup {
+	top: -0.7em;
+}
+sub {
+	bottom: -0.25em;
+}
 
 /* 1.2. Clear Fix
    ========================== */
 
 .cf:before,
 .cf:after {
-  display: table;
-  content: " ";
+	content: " ";
+	display: table;
 }
 
-.cf:after { clear: both; }
-.cf { *zoom: 1; }
+.cf:after {
+	clear: both;
+}
+.cf {
+	*zoom: 1;
+}
 
 /*for all*/
 body {
-  box-sizing: border-box;
-  font-family: sans-serif;
+	box-sizing: border-box;
+	font-family: sans-serif;
 }
 
-a { 
-  display: inline-block;
-  text-decoration: none; 
+a {
+	display: inline-block;
+	text-decoration: none;
 }
 
 li {
-  display: inline-block;
-  list-style-type: none;
+	display: inline-block;
+	list-style-type: none;
 }
 
 /*for wrapper*/
 .wrapper {
-  max-width: 1360px;
-  width: 86%; 
-  margin: 0 auto;
+	max-width: 1360px;
+	width: 86%;
+	margin: 0 auto;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+:root {
+	--font1: "Poppins", sans-serif;
+	--font2: "Baloo Bhai 2", cursive;
+}
+/* COmmon Styling */
+.common-color {
+	background-color: gray;
 }
 /*=================================
   Header styling starts here
 =================================*/
-
-
-
-
-
-
+header {
+	height: 10vh;
+	background-color: #2c3e50;
+	/* position: relative; */
+}
+header .wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+header .wrapper nav {
+	flex: 1;
+	/* background-color: lawngreen; */
+}
+header .wrapper nav li {
+	margin-left: 3rem;
+	position: relative;
+}
+header .wrapper nav li span {
+	position: absolute;
+	bottom: -0.8rem;
+	left: 42%;
+	color: orangered;
+	font-size: 1.5rem;
+}
+header .wrapper nav li a {
+	color: #fff;
+	font-family: var(--font1);
+	font-size: 1.3rem;
+	font-weight: 500;
+	transition: 0.4s;
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+}
+header .wrapper nav li a.active {
+	color: aqua;
+}
+header .wrapper nav li a:hover {
+	color: crimson;
+}
+.social-links {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.social-links a {
+	width: 2.5rem;
+	height: 2.5rem;
+	padding: 0.2rem 0.4rem;
+	border-radius: 0.5rem;
+	border-radius: 50%;
+	margin: 0 0.3rem;
+	color: #555555;
+	font-size: 2rem;
+	text-indent: -999999px;
+}
+.social-links a img {
+	float: right;
+	transition: 0.5s;
+	clear: both;
+}
+.social-links a:hover img {
+	filter: invert(1);
+}
+.hamburger {
+	/* background-color: red; */
+	width: 3rem;
+	height: 2.5rem;
+	display: flex;
+  display: none;
+	/* display: none; */
+	position: fixed;
+	z-index: 10000;
+	top: 3%;
+	right: 5%;
+  cursor: pointer;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+}
+.hamburger span {
+	width: 100%;
+	height: 0.3rem;
+	border-radius: 20%;
+	display: block;
+	z-index: 100;
+	background: #fff;
+	box-shadow: 0 0.2rem 1rem #000;
+}
+.hamburger-menu {
+	width: 35rem;
+	height: 100vh;
+	display: flex;
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+	right: -38rem;
+	background: #000;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	box-shadow: 0 0rem 1rem rgba(255, 255, 255, 0.493);
+}
+.hamburger-menu li {
+	margin: 1.5rem 0;
+}
+.hamburger-menu a {
+	color: #fff;
+	font-size: 2rem;
+	font-weight: 600;
+	letter-spacing: 0.3rem;
+	text-shadow: 0 0 1rem rgb(172, 28, 28);
+}
 /*=================================
   Header styling ends here
-=================================*/  
+=================================*/
 
 /*=================================
   main styling starts here
 =================================*/
 
+/*=================================
+  Banner styling starts here
+=================================*/
+#banner {
+	width: 100%;
+	height: 90vh;
+	padding: 0;
+	position: relative;
+	/* overflow: hidden; */
+}
+#banner figure {
+	width: 100%;
+	height: 100%;
+}
+#banner .banner-image img {
+	height: 100%;
+	object-fit: cover;
+	filter: grayscale(50%);
+}
+#banner .wrapper {
+	/* display: flex; */
+	width: 60rem;
+	height: 10rem;
+	overflow: hidden;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+#banner .wrapper .slider {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background-color: #d35400;
+}
+#prev-btn,
+#next-btn {
+	width: 3rem;
+	height: 3rem;
+	display: flex;
+	/* background: #000; */
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	align-items: center;
+	justify-content: center;
+}
+#prev-btn {
+	left: 2%;
+}
+#next-btn {
+	right: 3%;
+}
+#prev-btn .previous,
+#next-btn .next {
+	color: #fff;
+	font-size: 2.5rem;
+}
+#banner .slider li {
+	width: 70%;
+	height: 8rem;
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	transform: translateX(-50%);
+	line-height: 4rem;
+}
+#banner .slider li h2 {
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 2.5rem;
+	font-weight: 600;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+}
+/*=================================
+  Banner styling ends here
+=================================*/
+/*=================================
+  Our Focus styling starts here
+=================================*/
+section {
+	padding: 3rem 0rem;
+}
+h3 {
+	margin-bottom: 3rem;
+	color: #444;
+	font-family: var(--font1);
+	font-size: 3rem;
+	font-weight: 600;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+}
+.our-focus-article {
+	display: flex;
+	justify-content: space-between;
+}
+.our-focus-article article {
+	width: 20%;
+	padding: 1rem;
+	border: 0.1rem solid transparent;
+	/* background: chartreuse; */
+	display: flex;
+	transition: all 0.5s;
+	text-align: center;
+	align-items: center;
+	flex-direction: column;
+}
+.our-focus-article article:hover {
+	border-radius: 0.6rem;
+	background: #f3f3f3;
+	transform: scale(1.01);
+	cursor: pointer;
+	box-shadow: 0 0.2rem 1.5rem #8f7c7c;
+}
+.our-focus-article article figure {
+	width: 6rem;
+	height: 6rem;
+	margin-top: 1rem;
+	text-align: center;
+}
+.our-focus-article article figure img {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	object-fit: cover;
+}
+.our-focus-article article .content {
+	margin: 1.5rem 0;
+}
+.our-focus-article article .content h4 {
+	width: 74%;
+	margin: auto;
+	color: #333;
+	font-family: var(--font2);
+	font-size: 2rem;
+	font-weight: 700;
+	text-align: center;
+	text-transform: uppercase;
+	line-height: 2.5rem;
+}
+.our-focus-article article .content p {
+	margin: 1.5rem 0;
+	color: #555;
+	font-family: var(--font2);
+	font-size: 1.4rem;
+	font-weight: 500;
+	line-height: 1.6em;
+}
+.our-focus-article article .content .read-btn {
+	padding: 0.8rem 1.4rem;
+	border: 0.01rem solid #555;
+	background: transparent;
+	color: #333;
+	font-family: var(--font2);
+	font-size: 1.3rem;
+	font-weight: 700;
+}
+.our-focus-article article .content .read-btn:hover {
+	background-color: #d8d2d2;
+}
+/*=================================
+  Our Focus styling ends here
+=================================*/
 
+/*=================================
+  Investment styling starts here
+=================================*/
+.investment {
+	background: #e8dfdf;
+}
+.investment .wrapper {
+	text-align: center;
+}
+.investment .invest-para {
+	color: #444;
+	font-family: var(--font1);
+	font-size: 1.6rem;
+	font-weight: 500;
+	letter-spacing: 0.1rem;
+	line-height: 2.5rem;
+}
+.investment .wrapper .investment-box {
+	margin: 3rem 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.investment .wrapper .investment-box li {
+	width: 34rem;
+	border: 0.8rem solid #fff;
+	background-color: #fff;
+	box-shadow: 0 0.2rem 2rem #444;
+}
+.investment-box li figure {
+	width: 100%;
+	height: 16rem;
+}
+.investment-box li figure {
+	height: 100%;
+}
+.investment-box .investment-content {
+	padding: 1rem;
+	margin: 1.5rem 0;
+	background-color: #fff;
+}
+.investment-box .investment-content h5 {
+	color: #d35400;
+	font-family: var(--font2);
+	font-size: 2.6rem;
+	font-weight: 600;
+}
+.investment-box .investment-content p {
+	margin: 1rem 0 2rem;
+	color: #666;
+	font-family: var(--font1);
+	font-size: 1.3rem;
+	font-weight: 400;
+	letter-spacing: 0.1rem;
+}
+.investment-box .investment-content .invest-btn {
+	width: 2.5rem;
+	height: 2.5rem;
+	padding: 0.3rem;
+	border: 0.2rem solid #666;
+	border-radius: 50%;
+	color: #555;
+	font-size: 1.3rem;
+	font-weight: 600;
+	transition: 0.5s;
+	text-indent: -999999px;
+}
+.investment-box .investment-content img {
+	float: right;
+	clear: both;
+	filter: grayscale(100%);
+}
+.investment-box .investment-content .invest-btn:hover {
+	transform: scale(1.3);
+	filter: grayscale(0%);
+}
+.investment-box .investment-content .invest-btn:hover img {
+	filter: grayscale(0%);
+}
+/*=================================
+  Investment styling ends here
+=================================*/
+/*=================================
+  solutions styling starts here
+=================================*/
+.solutions {
+	padding: 0;
+	display: flex;
+}
+.solutions .investment-solutions,
+.solutions .saving {
+	width: 50%;
+}
+.solutions .investment-solutions {
+	position: relative;
+	background-color: #d35400;
+}
+.solutions .wrapper h4 {
+	margin: 3rem 0;
+	color: #fff;
+	font-family: var(--font2);
+	font-size: 3rem;
+	font-weight: 600;
+	letter-spacing: 0.1rem;
+}
+.solutions .wrapper ul li {
+	width: 70%;
+}
+.solutions .wrapper ul li {
+	margin: 1rem 0px;
+}
+.solutions .wrapper ul li figure {
+	width: 2rem;
+	margin-right: 2rem;
+	float: left;
+}
+.solutions .wrapper ul li figure img {
+	height: 100%;
+}
+.solutions .wrapper ul li p {
+	color: #fff;
+	font-family: var(--font1);
+	font-size: 1.6rem;
+	font-weight: 500;
+	line-height: 2.4rem;
+	letter-spacing: 0.1rem;
+}
 
+.learn-btn {
+	margin: 3rem 0;
+	display: inline-block;
+}
+.learn-btn .learn-more-btn {
+	padding: 1rem 1.6rem;
+	border: 2px solid #fff;
+	color: #fff;
+	font-family: var(--font2);
+	font-size: 1.4rem;
+	font-weight: 700;
+}
+.solutions .saving {
+	position: relative;
+	background-color: #2c3e50;
+}
+.solutions .saving .para {
+	margin-top: 1rem;
+	color: #ffffff85;
+	font-family: var(--font1);
+	font-size: 1.4rem;
+	letter-spacing: 0.1rem;
+}
+/*=================================
+  solutions styling ends here
+=================================*/
+/*=================================
+  testimonial styling starts here
+=================================*/
 
+.testimonial .wrapper {
+	padding: 1rem 0;
+	position: relative;
+}
 
+.testimonial .wrapper .prev-btn,
+.testimonial .wrapper .next-btn {
+	width: 3rem;
+	height: 3rem;
+	display: flex;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	align-items: center;
+	justify-content: center;
+}
+.testimonial .wrapper .prev-btn {
+	left: -2%;
+}
+.testimonial .wrapper .next-btn {
+	right: 2%;
+}
+.testimonial .wrapper .prev-btn a,
+.testimonial .wrapper .next-btn a {
+  color: #000;
+	font-size: 2.5rem;
+  font-weight: 200;
+}
+.testimonial .wrapper ul {
+	width: 100%;
+	height: 100%;
+}
+.testimonial .wrapper ul li {
+	width: 16%;
+}
+.testimonial .wrapper ul li figure {
+	width: 100%;
+	cursor: pointer;
+}
+/*=================================
+  testimonial styling ends here
+=================================*/
+/*=================================
+  contact styling ends here
+=================================*/
 
+.contact {
+	width: 100%;
+	height: 35rem;
+	position: relative;
+}
+.contact::before {
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	background-image: url(../images/bg1.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	filter: grayscale(80%) blur(0.1rem);
+}
+.contact figure {
+	width: 100%;
+}
+.contact .wrapper h5 {
+	color: #fff;
+	font-family: var(--font2);
+	font-size: 4rem;
+	font-weight: 600;
+	text-align: center;
+	text-transform: uppercase;
+	text-shadow: 0.2rem 0.2rem 0.2rem #000;
+	letter-spacing: 0.3rem;
+}
+.contact .contact-details {
+	width: 100%;
+	margin-top: 2rem;
+	display: flex;
+}
+.contact .contact-details .input-box {
+	width: 30%;
+}
+.contact .contact-details .input-box input {
+	width: 100%;
+	padding: 0.7rem 0.5rem;
+	margin-bottom: 2rem;
+	font-family: inherit;
+	font-size: 1.4rem;
+	letter-spacing: 0.1rem;
+}
+.contact .contact-details .input-box input:last-child {
+	margin-bottom: 0;
+}
+.contact .textarea {
+	width: 70%;
+	height: 20rem;
+	margin-left: 3rem;
+}
+.contact .contact-details textarea {
+	width: 100%;
+	height: 71%;
+	padding: 10px;
+	resize: none;
+}
+input[type="submit"] {
+	padding: 1rem 1.5rem;
+	border: none;
+	margin-top: 1rem;
+	float: right;
+	background: #d35400;
+	color: #fff;
+	font-size: 1.4rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	clear: both;
+	letter-spacing: 0.1rem;
+}
+/*=================================
+  contact styling ends here
+=================================*/
+/*=================================
+  location styling starts here
+=================================*/
+.location {
+	width: 100%;
+	background-color: #2c3e50;
+}
+.location .wrapper {
+	height: 15rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.location .wrapper address,
+.email,
+.phone {
+	width: 30%;
+	display: flex;
+	align-items: center;
+}
 
-
+.location .wrapper figure {
+	width: 6rem;
+	height: 6rem;
+	border: 0.4rem solid #666;
+	border-radius: 50%;
+}
+.location .wrapper figure img {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+.location .wrapper address p {
+	margin-left: 2rem;
+	color: #fff;
+	font-size: 1.4rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+}
+.location .wrapper a {
+	margin-left: 2rem;
+	color: #fff;
+	font-size: 1.4rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+}
+.location .wrapper a span {
+	margin-bottom: 0.3rem;
+	display: block;
+}
+/*=================================
+  location styling ends here
+=================================*/
 /*=================================
   main styling ends here
 =================================*/
 
 /*=================================
   footer styling starts here
-=================================*/ 
-
-
-
-
-
-
-
- /*=================================
+=================================*/
+footer {
+	padding: 4rem 0;
+	background-color: #666;
+}
+footer .wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+footer .footer-left h6 {
+	display: inline-block;
+	color: #ffff;
+	font-family: var(--font1);
+	font-size: 3rem;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+footer .footer-left span {
+	color: #fff;
+	font-size: 1.2rem;
+}
+footer .footer-left .social-links {
+	margin-top: 0.4rem;
+	display: block;
+}
+footer .footer-left .social-links li a img:hover {
+	transform: scale(1.4);
+}
+footer .wrapper figure {
+	width: 50%;
+}
+footer .wrapper figure img {
+	width: 100%;
+	height: 20rem;
+	object-fit: cover;
+}
+/*=================================
   footer styling ends here
-=================================*/ 
+=================================*/
 
 /*media query starts*/
 /*media query for 995px starts here*/
 @media only screen and (max-width: 995px) {
-
-
-
-}  
+}
